@@ -15,6 +15,7 @@ int main (int argc, char **argv)
 
   cout << endl;
 
+  //determines if the current amount of people in the room is less than, equal to, or more than the max capacity
   if(maxCapacity >= currentAmount){
     cout << "It is legal to hold this meeting!" << endl;
     cout << (maxCapacity - currentAmount) << " more people may enter the room." << endl;
