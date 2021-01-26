@@ -10,6 +10,6 @@ float addTax(float taxRate, float cost){  //taxRate input as percent
 
 int main (int argc, char **argv)
 {
-  cout << addTax(10,100) << endl;
+  cout << addTax(10,100) << endl; //example that outputs addTax's return
   return 0;
 }
