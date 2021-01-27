@@ -1,4 +1,5 @@
 #include <iostream>
+#include<string.h>
 using namespace std;
 
 //prompts message then takes in TakeInput
@@ -38,10 +39,16 @@ int main (int argc, char **argv)
   float userFeet = 0.0;
   float userInches = 0.0;
   float totalFeet = 0.0;
+  char redo[100] = "default"; //needs to be char array for strcmp() to work
 
-  TakeInput(userFeet,userInches); //prompts user to input measurement in feet and inches
-  totalFeet = ToOnlyFeet(userFeet,userInches); //sets the float variable totalFeet to the input of feet and inches converted to just feet
-  ToMetricPrint(totalFeet); //converts titalFeet into metric centimeters and meters then calls the print function
+  while((strcmp("exit",redo) != 0) != 0){
+    TakeInput(userFeet,userInches); //prompts user to input measurement in feet and inches
+    totalFeet = ToOnlyFeet(userFeet,userInches); //sets the float variable totalFeet to the input of feet and inches converted to just feet
+    ToMetricPrint(totalFeet); //converts titalFeet into metric centimeters and meters then calls the print function
+    cout << "Type exit to end or type yes to convert another measurement: ";
+    cin >> redo;
+    cout << endl;
+  }
 
   return 0;
 }
